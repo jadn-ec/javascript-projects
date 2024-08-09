@@ -5,7 +5,22 @@
 	<script>
 		// TODO: create a handler
     window.addEventListener("load", function(){
-        // TODO: register the handler
+        let form = document.querySelector("form");
+    	form.addEventListener("submit", function(event) {
+		let textItem = document.querySelector("input[name=q]");
+		let searchEngine = document.querySelector("input[name=searchEngine]:checked");
+		if(textItem.value === "" || searchEngine.value === ""){
+			alert("All fields are required!");
+			event.preventDefault();
+		}
+		let action = {
+			"google": "https://www.google.com/search",
+			"duckDuckGo": "https://duckduckgo.com/",
+			"bing": "https://www.bing.com/search",
+			"ask": "https://www.ask.com/web",
+		}
+		form.setAttribute("action", action[searchEngine.value]);
+		});
     });
 	</script>
 </head>
@@ -13,7 +28,16 @@
 <body>
 
 	<form id="searchForm">
-    <!-- TODO: add form elements -->
+		<input type="text" name = "q"/> 
+		<input type ="radio" name ="searchEngine" value= "google"/>
+		<label>Google</label> 
+		<input type ="radio" name ="searchEngine" value= "duckDuckGo"/>
+		<label>DuckDuckGo</label> 
+		<input type ="radio" name ="searchEngine" value= "bing"/>
+		<label>Bing</label> 
+		<input type ="radio" name ="searchEngine" value= "ask"/>
+		<label>Ask</label> 
+		<button value="Go!">Submit</button>
 	</form>
 
 </body>
