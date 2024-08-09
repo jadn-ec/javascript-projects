@@ -1,5 +1,4 @@
 <!doctype html>
-
 <head>
 	<meta charset="utf-8">
 	<script>
@@ -24,20 +23,51 @@
     });
 	</script>
 </head>
-
-<body>
-
+<body id ="body">
+	<div class="header">
+		<h1>Best Search Engine</h1>
+	  </div>
+<div id="data">
 	<form id="searchForm">
-		<input type="text" name = "q"/> 
+		<label>Search:</label> 
+		<input type="text" name = "q"/> <br>
 		<input type ="radio" name ="searchEngine" value= "google"/>
-		<label>Google</label> 
+		<label>Google</label> <br>
 		<input type ="radio" name ="searchEngine" value= "duckDuckGo"/>
-		<label>DuckDuckGo</label> 
+		<label>DuckDuckGo</label>  <br>
 		<input type ="radio" name ="searchEngine" value= "bing"/>
-		<label>Bing</label> 
+		<label>Bing</label>  <br>
 		<input type ="radio" name ="searchEngine" value= "ask"/>
-		<label>Ask</label> 
-		<button value="Go!">Submit</button>
+		<label>Ask</label>  <br>
+		<button id="submit" value="Go!">Submit</button>
 	</form>
-
+</div>
 </body>
+
+<style>
+	body{
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: pink;
+		
+	}
+	#data{
+		margin: 100px;
+		width: 300px;
+		margin: 100px auto;
+		padding: 20px;
+		border: 10px solid #ccc;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+
+	#submit{
+		align-items: center;
+	}
+.header{
+	text-align:center;
+	text-decoration: dotted;
+	color: rgb(228, 138, 228);
+	
+}
+</style>
+
